@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List Card</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar__title">Goal List </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <%= currentDate %> 
+        </div>
+        <div class="card-body">
+            <ul class="todo-list">
+                <% for(var i=0; i < newListItems.length; i++) { %>
+                    <div class="sepr">
+                        <li class="todo-item">
+                            <input type="checkbox" class="checkbox">
+                            <span><%= newListItems[i] %></span>
+                        </li>
+                    </div>
+                <% } %>
+            </ul>
+            <form action="/" method="post" class="add-item-form">
+                <input type="text" name="newitem" placeholder="Add new item">
+                <button type="submit" name="button">Add</button>
+            </form>
+        </div> 
+    </div>
+    <footer class="footer">
+        <div class="footer__content">
+          <span class="footer__text">© 2023 attacker_frnd. All rights reserved.</span>
+        </div>
+      </footer>
+</body>
+</html>
